@@ -1,17 +1,14 @@
 import Contacts from "./components/Contacts";
-import Chat from "./components/Chat";
 import Profile from "./components/Profile";
+import Messages from "./components/Messages";
 
 function App() {
-
-
-
   return (
     <div className="App">
       <div className="main">
-        <Contacts/>
-        <Chat/>
-        <Profile/>
+        <Contacts />
+        <Messages />
+        <Profile />
       </div>
     </div>
   );

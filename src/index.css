@@ -1,4 +1,23 @@
+body {
+  font-family: 'Ubuntu', sans-serif;}
+
 .main {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
+
+.contact {
+  margin: 10px 5px;
+  display: flex;
+  padding: 15px 10px;
+  font-size: 10px;
+}
+
+.avatar {
+  background-color: cornflowerblue;
+  font-size: 15px;
+  border-radius: 50%;
+  margin-right: 5px;
+  padding: 10px;
+}
+
