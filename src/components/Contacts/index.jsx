@@ -12,11 +12,11 @@ function Contacts(props) {
   const contacts = useSelector((state) => state.contacts.contacts);
 
   return (
-    <div className="contacts">
+    <div className="container">
       <div>
         <input type="text" />
       </div>
-      <div>
+      <div className="contacts">
         {loading ? (
           <div>Идет загрузка ...</div>
         ) : (
