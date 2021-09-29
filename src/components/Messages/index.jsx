@@ -11,10 +11,14 @@ function Messages(props) {
 
   return (
     <div className="messages">
-      <div>Имя автора</div>
-      <div>Привет</div>
-      <div>Привет</div>
-      <div>Привет</div>
+      <div className="name">Имя автора</div>
+        <div className="messages">
+            <div className="message">Привет</div>
+            <div className="message">Привет, йопта</div>
+            <div className="message">Лоремш ипсумш ыдфлвоар ываоывра
+            ыывфа ыва ыва ывавыарарррв ловыадлва
+            </div>
+        </div>
     </div>
   );
 }
