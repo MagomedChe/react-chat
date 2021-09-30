@@ -55,22 +55,41 @@ body {
 .contact-last-message .date {
   margin: 0 10px;
 }
+
 .name {
   font-size: 20px;
 }
 
-.messages {
-  justify-content: flex-end;
-  width: 70%;
-}
-
 .message {
-  width: 40%;
+  width: 70%;
   border-radius: 20px 20px 0 20px;
   background-color: #1446a0;
   color: white;
   padding: 15px;
   margin: 10px 0;
   font-size: 15px;
+  font-weight: 300;
+}
+
+.time-message {
+  font-size: 10px;
+}
+
+.chat {
+  width: 100%;
+}
+
+.profile {
+  width: 200px;
+}
+
+.lage-avatar {
+  width: 80px;
+  line-height: 80px;
+  background: linear-gradient(#cfe7fa, #6393c1);
+  border-radius: 50%;
+  text-align: center;
+  color: white;
+  font-size: 30px;
 }
 
