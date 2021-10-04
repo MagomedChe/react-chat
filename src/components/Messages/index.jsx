@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadMessages } from "../../redux/ducks/messagesReduser";
-// import CheckIcon from '@mui/icons-material/Check';
+import CheckIcon from '@mui/icons-material/Check';
 
 function Messages(props) {
   const messages = useSelector((state) => state.messages.messages);
@@ -21,9 +21,7 @@ function Messages(props) {
           <div className="time-message">
               time
           </div>
-          <div className="status-message">
-            {/*<CheckIcon/>*/}
-          </div>
+          <CheckIcon fontSize={'small'}/>
         </div>
         <div className="message">Привет, йопта</div>
         <div></div>
@@ -33,6 +31,7 @@ function Messages(props) {
 }
 
 export default Messages;
+
 
 
 

@@ -69,6 +69,7 @@ body {
   margin: 10px 0;
   font-size: 15px;
   font-weight: 300;
+  text-align: end;
 }
 
 .time-message {
@@ -76,12 +77,23 @@ body {
 }
 
 .chat {
-  width: 100%;
+  width: 60%;
+}
+
+.chat-messages {
+  justify-content: end;
+  position: relative;
+  float: right;
+  margin-right: 20px;
 }
 
 .profile {
-  width: 200px;
+  width: 25%;
+  margin-top: 20px;
+  text-align: center;
 }
+
+
 
 .lage-avatar {
   width: 80px;
@@ -91,5 +103,34 @@ body {
   text-align: center;
   color: white;
   font-size: 30px;
+  margin: auto;
+}
+
+.profile-name {
+  font-weight: 400;
+  margin: 20px 0 15px 0;
+  font-size: 20px;
+}
+
+.profile-nickname {
+  color: grey;
+  font-weight: 100;
+  font-size: 20px;
+}
+
+.profile-connection {
+  color: grey;
+  margin-top: 15px;
+}
+
+.social {
+  margin: 10px 0;
+  font-size: 15px;
+}
+
+.social-name{
+  /*line-height: 40px;*/
+  height: 30px;
+  vertical-align: middle;
 }
 
