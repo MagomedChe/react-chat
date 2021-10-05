@@ -15,16 +15,15 @@ function Messages(props) {
       <div className="chat-name">Имя автора</div>
       <div className="chat-messages">
         <div className="message">
-          <div>
-              Привет
+          <div className="text">
+            Ассаламу 1алайкум
           </div>
+          <div></div>
           <div className="time-message">
               time
           </div>
           <CheckIcon fontSize={'small'}/>
         </div>
-        <div className="message">Привет, йопта</div>
-        <div></div>
         </div>
     </div>
   );

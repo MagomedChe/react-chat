@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadContacts } from "../../redux/ducks/contactsReducer";
 import Contact from "./Contact";
+import SearchContact from "./SearchContact";
 
 function Contacts(props) {
   const dispatch = useDispatch();
@@ -13,8 +14,8 @@ function Contacts(props) {
 
   return (
     <div className="container">
-      <div>
-        <input type="text" />
+      <div className="search">
+       <SearchContact/>
       </div>
       <div className="contacts">
         {loading ? (
