@@ -14,7 +14,7 @@ function Contacts(props) {
 
   return (
     <div className="container">
-      <div className="search">
+      <div className="search-contact">
        <SearchContact/>
       </div>
       <div className="contacts">

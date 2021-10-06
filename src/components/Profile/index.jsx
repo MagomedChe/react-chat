@@ -3,9 +3,8 @@ import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import VideoCameraFrontIcon from "@mui/icons-material/VideoCameraFront";
 import EmailIcon from "@mui/icons-material/Email";
 import { makeStyles } from "@material-ui/styles";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
+import IconButton from "@mui/material/IconButton";
+import BasicButtons from "./Social";
 
 const useStyles = makeStyles({
   marginIcon: {
@@ -24,25 +23,19 @@ function Profile(props) {
         <div className="profile-name">Фамилия Имя</div>
         <div className="profile-nickname">@nickname</div>
         <div className="profile-connection">
-          <LocalPhoneIcon />
-          <VideoCameraFrontIcon className={classes.marginIcon} />
-          <EmailIcon />
+          <IconButton>
+            <LocalPhoneIcon />
+          </IconButton>
+          <IconButton>
+            <VideoCameraFrontIcon className={classes.marginIcon} />
+          </IconButton>
+          <IconButton>
+            <EmailIcon />
+          </IconButton>
         </div>
         <div className="social">
-          <div className="social-name">
-            <InstagramIcon fontSize="small" color="action" />
-            nickname
-          </div>
-          <div>
-            <FacebookIcon fontSize="small" color="action" />
-            nickname
-          </div>
-          <div>
-            <TwitterIcon fontSize="small" color="action" />
-            nickname
-          </div>
+          <BasicButtons />
         </div>
-        <div className="media">Кнопка</div>
       </div>
     </div>
   );

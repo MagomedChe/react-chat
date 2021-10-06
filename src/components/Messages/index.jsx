@@ -2,6 +2,9 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadMessages } from "../../redux/ducks/messagesReduser";
 import CheckIcon from '@mui/icons-material/Check';
+import SearchMessage from "./SearchMessage";
+
+import SearchContact from "../Contacts/SearchContact";
 
 function Messages(props) {
   const messages = useSelector((state) => state.messages.messages);
@@ -12,13 +15,15 @@ function Messages(props) {
 
   return (
     <div className="chat">
-      <div className="chat-name">Имя автора</div>
+      <div className="chat-header">
+        <SearchMessage/>
+        <div className="chat-name">Имя автора</div>
+      </div>
       <div className="chat-messages">
         <div className="message">
           <div className="text">
             Ассаламу 1алайкум
           </div>
-          <div></div>
           <div className="time-message">
               time
           </div>
