@@ -87,13 +87,12 @@ body {
 
 .chat-header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
-.chat-header input {
-  height: 30px;
-  width: 150px;
-  /*border: none;*/
+.chat-name {
+  margin-right: 50px;
+  line-height: 40px;
 }
 
 .chat-messages {
@@ -103,6 +102,7 @@ body {
 }
 
 .profile {
+  display: block;
   width: 20%;
   padding-top: 20px;
   text-align: center;

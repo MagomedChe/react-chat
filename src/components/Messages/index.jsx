@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { loadMessages } from "../../redux/ducks/messagesReduser";
 import CheckIcon from '@mui/icons-material/Check';
 import SearchMessage from "./SearchMessage";
+import IconProfile from "./IconProfile"
 
 import SearchContact from "../Contacts/SearchContact";
 
@@ -18,6 +19,7 @@ function Messages(props) {
       <div className="chat-header">
         <SearchMessage/>
         <div className="chat-name">Имя автора</div>
+        <div><IconProfile/></div>
       </div>
       <div className="chat-messages">
         <div className="message">

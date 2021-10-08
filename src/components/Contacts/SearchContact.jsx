@@ -26,7 +26,7 @@ export default function FormPropsTextFields() {
       <div>
         <TextField
           // className={classes.searchInput}
-          id="outlined-search"
+          id="Search contact"
           label="Search contact"
           type="search"
           size="small"

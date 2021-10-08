@@ -7,14 +7,14 @@ export default function BasicTextFields() {
     <Box
       component="form"
       sx={{
-        "& > :not(style)": { m: 0, width: "25ch" },
+        "& > :not(style)": {  width: "100%", },
       }}
       noValidate
       autoComplete="off"
     >
       <TextField
-        id="outlined-basic"
-        label="Outlined"
+        id="Search messagec"
+        label="Search message"
         variant="outlined"
         size="small"
       />
