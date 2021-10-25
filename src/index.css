@@ -82,7 +82,9 @@ body {
 
 .chat {
   text-align: center;
-  width: 60%;
+  width: 100%;
+  margin-left: 20px;
+
 }
 
 .chat-header {
@@ -102,13 +104,22 @@ body {
 }
 
 .profile {
-  display: block;
-  width: 20%;
+  width: 0;
   padding-top: 20px;
   text-align: center;
   background-color: #ebebeb;
+  transition: all 0.5s;
+  transform: translateX(100vh);
 }
 
+.profile.active {
+  transform: translateX(0);
+  width: 30%;
+}
+
+.iconProfile {
+  margin-right: 20px;
+}
 .lage-avatar {
   width: 80px;
   line-height: 80px;

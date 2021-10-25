@@ -13,11 +13,12 @@ const useStyles = makeStyles({
   },
 });
 
-function Profile(props) {
+function Profile({activeProfile, setActiveProfile}) {
+
   const classes = useStyles();
 
   return (
-    <div className="profile">
+    <div className={activeProfile ? "profile active" :  "profile"}>
       <div className="profile-info">
         <div className="lage-avatar">A</div>
         <div className="profile-name">Фамилия Имя</div>
