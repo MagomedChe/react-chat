@@ -4,12 +4,16 @@ import { loadMessages } from "../../redux/ducks/messagesReduser";
 import CheckIcon from '@mui/icons-material/Check';
 import SearchMessage from "./SearchMessage";
 import IconProfile from "./IconProfile"
+import {useParams} from "react-router-dom";
 
 
 
 function Messages({activeProfile, setActiveProfile}) {
   const messages = useSelector((state) => state.messages.messages);
   const dispatch = useDispatch();
+  const params = useParams();
+
+  console.log(params)
   // useEffect(() => {
   //   dispatch(loadMessages());
   // }, []);

@@ -17,6 +17,9 @@ body {
 .contacts {
   width: 100%;
 }
+.contacts a {
+  text-decoration: none;
+}
 
 .contact {
   margin: 0 auto;
@@ -109,12 +112,12 @@ body {
   text-align: center;
   background-color: #ebebeb;
   transition: all 0.5s;
-  transform: translateX(100vh);
+  transform: translateX(100px);
 }
 
 .profile.active {
   transform: translateX(0);
-  width: 30%;
+  width: 35%;
 }
 
 .iconProfile {
