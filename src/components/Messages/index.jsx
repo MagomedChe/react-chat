@@ -13,10 +13,9 @@ function Messages({activeProfile, setActiveProfile}) {
   const dispatch = useDispatch();
   const params = useParams();
 
-  console.log(params)
-  // useEffect(() => {
-  //   dispatch(loadMessages());
-  // }, []);
+  useEffect(() => {
+    dispatch(loadMessages());
+  }, []);
 
   return (
     <div className="chat">
