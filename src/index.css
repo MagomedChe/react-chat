@@ -4,7 +4,6 @@ body {
 
 .main {
   display: flex;
-  justify-content: space-between;
 }
 
 .container {
@@ -16,7 +15,6 @@ body {
 .contacts {
   width: 100%;
 }
-
 
 .contact a {
   margin: 0 auto;
@@ -68,11 +66,18 @@ a {
   font-size: 20px;
 }
 
-.message {
+
+
+.chat {
+  text-align: center;
+  width: 70%;
+}
+
+.chat-content {
   width: 70%;
   border-radius: 20px 20px 0 20px;
   background-color: #1446a0;
-  color: white;
+  color: #232222;
   padding: 15px;
   margin: 10px 0;
   font-size: 15px;
@@ -81,32 +86,29 @@ a {
   min-width: 200px;
 }
 
-.time-message {
-  font-size: 10px;
-  margin: 10px 0;
-}
-
-.chat {
-  text-align: center;
-  width: 100%;
-  margin-left: 20px;
-
-}
-
+/*.time-message {*/
+/*  font-size: 10px;*/
+/*  margin: 10px 0;*/
+/*}*/
 .chat-header {
   display: flex;
   justify-content: space-between;
 }
 
-.chat-name {
-  margin-right: 50px;
-  line-height: 40px;
-}
+/*.chat-name {*/
+/*  margin-right: 50px;*/
+/*  line-height: 40px;*/
+/*}*/
 
-.chat-messages {
-  float: right;
-  margin: 30px 20px 0 0 ;
-  text-align: -webkit-right;
+/*.chat-messages {*/
+/*  max-width: 70%;*/
+/*  float: right;*/
+/*  margin: 30px 20px 0 0 ;*/
+/*  text-align: -webkit-right;*/
+/*}*/
+
+.text {
+  word-wrap: break-word;
 }
 
 .profile {

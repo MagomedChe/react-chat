@@ -12,6 +12,8 @@ function Messages({activeProfile, setActiveProfile}) {
   const messages = useSelector((state) => state.messages.messages);
   const dispatch = useDispatch();
   const params = useParams();
+  const loading = useSelector((state) => state.messages.loading);
+
 
   useEffect(() => {
     dispatch(loadMessages());
@@ -29,7 +31,15 @@ function Messages({activeProfile, setActiveProfile}) {
       <div className="chat-messages">
         <div className="message">
           <div className="text">
-            Ассаламу 1алайкум
+            {loading ? (<div>Идет загрузка ...</div>) : (
+                <div>
+                  {messages.map((message) => {
+                    return <div className="chat-content"> {message.content} </div>
+                  })}
+                </div>
+            )
+
+            }
           </div>
           <div className="time-message">
               time
