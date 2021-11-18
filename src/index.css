@@ -7,7 +7,6 @@ body {
 }
 
 .container {
-  width: 20%;
   min-width: 300px;
   background-color: #ebebeb;
 }
@@ -69,27 +68,18 @@ a {
 
 
 .chat {
+  margin-left: 50px;
   text-align: center;
-  width: 70%;
+  width: 80%;
 }
 
-.chat-content {
-  width: 70%;
-  border-radius: 20px 20px 0 20px;
-  background-color: #1446a0;
-  color: #232222;
-  padding: 15px;
-  margin: 10px 0;
-  font-size: 15px;
-  font-weight: 300;
-  text-align: right;
-  min-width: 200px;
-}
+
 
 /*.time-message {*/
 /*  font-size: 10px;*/
 /*  margin: 10px 0;*/
 /*}*/
+
 .chat-header {
   display: flex;
   justify-content: space-between;
@@ -100,15 +90,29 @@ a {
 /*  line-height: 40px;*/
 /*}*/
 
-/*.chat-messages {*/
-/*  max-width: 70%;*/
-/*  float: right;*/
-/*  margin: 30px 20px 0 0 ;*/
-/*  text-align: -webkit-right;*/
+.chat-messages {
+  max-width: 70%;
+  float: right;
+  margin: 30px 20px 0 0 ;
+  text-align: -webkit-right;
+}
+
+/*.text {*/
+/*  word-wrap: break-word;*/
 /*}*/
 
-.text {
+.chat-text {
+  width: fit-content;
   word-wrap: break-word;
+  border-radius: 20px 20px 0 20px;
+  background-color: #1446a0;
+  color: #cbcbcb;
+  padding: 15px;
+  margin: 10px 0;
+  font-size: 15px;
+  font-weight: 300;
+  text-align: right;
+  max-width: 600px;
 }
 
 .profile {
@@ -116,13 +120,13 @@ a {
   padding-top: 20px;
   text-align: center;
   background-color: #ebebeb;
-  transition: all .5s;
+  transition: all .8s;
   transform: translateX(100px);
 }
 
 .profile.active {
   transform: translateX(0);
-  width: 35%;
+  width: 20%;
 }
 
 .iconProfile {
