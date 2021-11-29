@@ -2,10 +2,12 @@ import React from "react";
 import {Link, NavLink} from "react-router-dom";
 
 function Contact({ contact }) {
+
+
+
   return (
-    // <NavLink to={`/${contact._id}`} activeClassName="selected">
       <div className="contact">
-        <NavLink to={`/${contact._id}`} activeClassName="selected">
+        <NavLink to={`/${contact._id}`}>
           <div className="contact-avatar">A</div>
           <div className="info">
             <div className="contact-name">{contact.fullname}</div>
@@ -13,9 +15,7 @@ function Contact({ contact }) {
           </div>
           <div className="contact-last-time">12:30</div>
         </NavLink>
-
       </div>
-    // </NavLink>
   );
 }
 

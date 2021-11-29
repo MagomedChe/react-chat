@@ -2,7 +2,7 @@ import Contacts from "./components/Contacts";
 import Profile from "./components/Profile";
 import Messages from "./components/Messages";
 import { useState } from "react";
-import { Route } from "react-router-dom";
+import { Routes, Route,  } from "react-router-dom";
 
 function App() {
   const [activeProfile, setActiveProfile] = useState(false);
@@ -10,13 +10,14 @@ function App() {
     <div className="App">
       <div className="main">
         <Contacts />
-        <Route path="/:_id">
-          <Messages
-            activeProfile={activeProfile}
-            setActiveProfile={setActiveProfile}
-          />
-        </Route>
-
+        <Routes>
+          <Route path="/:_id" element={
+            <Messages
+                activeProfile={activeProfile}
+                setActiveProfile={setActiveProfile}
+            />
+          }/>
+        </Routes>
         <Profile
           activeProfile={activeProfile}
           setActiveProfile={setActiveProfile}

@@ -3,6 +3,7 @@ import thunk from "redux-thunk";
 import {createLogger} from "redux-logger/src";
 import {contactReducer} from "./ducks/contactsReducer";
 import {messagesReducer} from "./ducks/messagesReduser";
+import {applicationReduser} from "./ducks/applicationReduser";
 
 const logger = createLogger({
     diff: true,
@@ -11,7 +12,8 @@ const logger = createLogger({
 
 const rootReducer = combineReducers({
     contacts: contactReducer,
-    messages: messagesReducer
+    messages: messagesReducer,
+    myId: applicationReduser,
 })
 
 
