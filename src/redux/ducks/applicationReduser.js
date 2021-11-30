@@ -6,7 +6,7 @@ export const applicationReduser = (state = initialState, action) => {
     switch (action.type) {
         case 'myId/success':
             return {
-                myId: action.payload
+                myId: action.payload._id
             }
 
 

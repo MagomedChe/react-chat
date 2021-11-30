@@ -9,7 +9,7 @@ function Contacts(props) {
 
   useEffect(() => {
     dispatch(loadContacts());
-  }, []);
+  }, [loadContacts]);
 
   const loading = useSelector((state) => state.contacts.loading);
   const contacts = useSelector((state) => state.contacts.contacts);
@@ -25,7 +25,7 @@ function Contacts(props) {
         ) : (
           <div>
             {contacts.map((contact) => {
-              return <Contact contact={contact} />;
+              return <Contact contact={contact} key={contact._id}/>;
             })}
           </div>
         )}

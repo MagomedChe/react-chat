@@ -1,20 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadMessages } from "../../redux/ducks/messagesReduser";
 import CheckIcon from "@mui/icons-material/Check";
 import SearchMessage from "./SearchMessage";
 import IconProfile from "./IconProfile";
+import {loadMyId} from "../../redux/ducks/applicationReduser";
+import {useParams} from "react-router-dom";
 
 function Messages({ activeProfile, setActiveProfile }) {
-  const messages = useSelector((state) => state.messages.messages);
+  const contactId = useParams()._id;
+  const myId = useSelector(state => state.application.myId);
+  const messagesChat = useSelector((state) => state.messages.messages);
+  const messages = messagesChat.filter(messages => myId === contactId)
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.messages.loading);
 
 
   useEffect(() => {
-
-    dispatch(loadMessages());
-  }, []);
+    dispatch(loadMyId());
+    dispatch(loadMessages(myId, contactId));
+  }, [loadMyId, loadMessages]);
 
   return (
     <div className="chat">
@@ -33,6 +38,8 @@ function Messages({ activeProfile, setActiveProfile }) {
           <div>Идет загрузка ...</div>
         ) : (
           <div className="chat-content">
+            {/*{sendMessage}*/}
+
             {messages.map((message) => {
               return <div className="chat-text"> {message.content} </div>;
             })}

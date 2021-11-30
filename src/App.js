@@ -13,8 +13,8 @@ function App() {
         <Routes>
           <Route path="/:_id" element={
             <Messages
-                activeProfile={activeProfile}
-                setActiveProfile={setActiveProfile}
+              activeProfile={activeProfile}
+              setActiveProfile={setActiveProfile}
             />
           }/>
         </Routes>

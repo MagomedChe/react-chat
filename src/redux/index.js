@@ -13,7 +13,7 @@ const logger = createLogger({
 const rootReducer = combineReducers({
     contacts: contactReducer,
     messages: messagesReducer,
-    myId: applicationReduser,
+    application: applicationReduser,
 })
 
 

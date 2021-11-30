@@ -4,7 +4,6 @@ import Button from "@mui/material/Button";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import Box from "@mui/material/Box";
 
 export default function BasicButtons() {
   return (
