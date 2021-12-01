@@ -26,7 +26,7 @@ export const messagesReducer = (state = initialState, action) => {
 export const loadMessages = (myId, contactId) => {
   return (dispatch) => {
     dispatch({ type: "messages/load/start" });
-    fetch(`https://api.intocode.ru:8001/api/messages/5f2ea3801f986a01cefc8bcd/${contactId}`)
+    fetch(`https://api.intocode.ru:8001/api/messages/${myId}/${contactId}`)
       .then((response) => response.json())
       .then((json) => {
         dispatch({

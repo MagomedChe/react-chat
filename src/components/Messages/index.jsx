@@ -6,20 +6,20 @@ import SearchMessage from "./SearchMessage";
 import IconProfile from "./IconProfile";
 import {loadMyId} from "../../redux/ducks/applicationReduser";
 import {useParams} from "react-router-dom";
+import Message from "./Message";
 
 function Messages({ activeProfile, setActiveProfile }) {
   const contactId = useParams()._id;
   const myId = useSelector(state => state.application.myId);
-  const messagesChat = useSelector((state) => state.messages.messages);
-  const messages = messagesChat.filter(messages => myId === contactId)
+  const messages = useSelector((state) => state.messages.messages);
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.messages.loading);
-
+  const send = messages.filter(item => item.toUserId !== myId)
 
   useEffect(() => {
     dispatch(loadMyId());
     dispatch(loadMessages(myId, contactId));
-  }, [loadMyId, loadMessages]);
+  }, [dispatch, myId, contactId]);
 
   return (
     <div className="chat">
@@ -38,10 +38,8 @@ function Messages({ activeProfile, setActiveProfile }) {
           <div>Идет загрузка ...</div>
         ) : (
           <div className="chat-content">
-            {/*{sendMessage}*/}
-
-            {messages.map((message) => {
-              return <div className="chat-text"> {message.content} </div>;
+            {send.map((message) => {
+              return <Message message={message} myId={myId} key={message._id}/>;
             })}
           </div>
         )}

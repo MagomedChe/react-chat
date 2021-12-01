@@ -9,7 +9,7 @@ function Contacts(props) {
 
   useEffect(() => {
     dispatch(loadContacts());
-  }, [loadContacts]);
+  }, [dispatch]);
 
   const loading = useSelector((state) => state.contacts.loading);
   const contacts = useSelector((state) => state.contacts.contacts);
