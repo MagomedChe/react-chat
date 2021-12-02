@@ -14,7 +14,7 @@ function Messages({ activeProfile, setActiveProfile }) {
   const messages = useSelector((state) => state.messages.messages);
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.messages.loading);
-  const send = messages.filter(item => item.toUserId !== myId)
+  // const allMessages = messages.filter(message => message.content)
 
   useEffect(() => {
     dispatch(loadMyId());
@@ -38,7 +38,7 @@ function Messages({ activeProfile, setActiveProfile }) {
           <div>Идет загрузка ...</div>
         ) : (
           <div className="chat-content">
-            {send.map((message) => {
+            {messages.map((message) => {
               return <Message message={message} myId={myId} key={message._id}/>;
             })}
           </div>
