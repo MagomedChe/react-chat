@@ -6,13 +6,13 @@ import {loadContacts} from "../../redux/ducks/contactsReducer";
 
 function Contacts(props) {
   const dispatch = useDispatch();
-
+    const loading = useSelector((state) => state.contacts.loading);
+    const contacts = useSelector((state) => state.contacts.contacts);
   useEffect(() => {
     dispatch(loadContacts());
   }, [dispatch]);
 
-  const loading = useSelector((state) => state.contacts.loading);
-  const contacts = useSelector((state) => state.contacts.contacts);
+
 
   return (
     <div className="container">

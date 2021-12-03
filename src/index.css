@@ -71,7 +71,7 @@ a {
 
 .chat {
   margin-left: 50px;
-  text-align: center;
+  /*text-align: center;*/
   width: 100%;
 }
 
@@ -92,11 +92,12 @@ a {
 /*  line-height: 40px;*/
 /*}*/
 
-.chat-messages {
-  max-width: 70%;
-  float: right;
+.chat-content {
+  /*max-width: 70%;*/
+  /*float: right;*/
   margin: 30px 20px 0 0 ;
-  text-align: -webkit-right;
+  /*text-align: -webkit-right;*/
+  /*justify-content: end;*/
 }
 
 /*.text {*/
@@ -110,11 +111,31 @@ a {
   background-color: #1446a0;
   color: #ffffff;
   padding: 15px;
-  margin: 10px 0;
+  margin: 0 0 10px auto;
   font-size: 15px;
   font-weight: 300;
   text-align: right;
   max-width: 600px;
+}
+
+.chat-incoming {
+  width: fit-content;
+  word-wrap: break-word;
+  border-radius: 0 20px 20px 20px;
+  background-color: #e6ecf6;
+  color: #030303;
+  margin-bottom: 10px;
+  padding: 15px;
+  font-size: 15px;
+  text-align: right;
+  max-width: 600px;
+}
+
+.chat-info {
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 0 3px;
+
 }
 
 .profile {

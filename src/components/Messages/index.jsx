@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadMessages } from "../../redux/ducks/messagesReduser";
-import CheckIcon from "@mui/icons-material/Check";
 import SearchMessage from "./SearchMessage";
 import IconProfile from "./IconProfile";
 import {loadMyId} from "../../redux/ducks/applicationReduser";
@@ -33,7 +32,7 @@ function Messages({ activeProfile, setActiveProfile }) {
           <IconProfile />
         </div>
       </div>
-      <div className="chat-messages">
+
         {loading ? (
           <div>Идет загрузка ...</div>
         ) : (
@@ -43,9 +42,9 @@ function Messages({ activeProfile, setActiveProfile }) {
             })}
           </div>
         )}
-        <div className="time-message">time</div>
-        <CheckIcon fontSize={"small"} />
-      </div>
+
+
+
     </div>
   );
 }
