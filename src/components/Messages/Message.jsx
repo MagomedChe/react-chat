@@ -21,25 +21,7 @@ function Message({message, myId}) {
     )
 
 
-    // if (message.toUserId === myId) {
-    //     return <div className="chat-incoming"> {message.content}
-    //         <div className="time-check">
-    //             <div className="time-message">time</div>
-    //             <CheckIcon fontSize={"small"} />
-    //         </div>
-    //     </div>
-    // }
-    //
-    // if (message.toUserId !== myId) {
-    //     return <div className="chat-send"> {message.content}
-    //         <div className="time-check">
-    //             <div className="time-message">time</div>
-    //             <CheckIcon fontSize={"small"} />
-    //         </div>
-    //     </div>
-    // }
-    //
-    // return <div className="chat-text"> {message.content} </div>
+
 
 
 }

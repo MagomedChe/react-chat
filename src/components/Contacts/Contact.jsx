@@ -3,8 +3,6 @@ import { NavLink} from "react-router-dom";
 
 function Contact({ contact }) {
 
-
-
   return (
       <div className="contact">
         <NavLink to={`/${contact._id}`}>

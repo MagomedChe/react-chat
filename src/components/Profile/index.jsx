@@ -5,30 +5,38 @@ import EmailIcon from "@mui/icons-material/Email";
 import { makeStyles } from "@material-ui/styles";
 import IconButton from "@mui/material/IconButton";
 import BasicButtons from "./Social";
+import {useSelector} from "react-redux";
+import {useParams} from "react-router-dom";
 
-const useStyles = makeStyles({
-  marginIcon: {
-    marginRight: 10,
-    marginLeft: 10,
-  },
-});
+// const useStyles = makeStyles({
+//   marginIcon: {
+//     marginRight: 10,
+//     marginLeft: 10,
+//   },
+// });
 
 function Profile({activeProfile, setActiveProfile}) {
 
-  const classes = useStyles();
+  // const contactId = useParams().id;
+  // const contacts = useSelector((state) => state.contacts.contacts)
+  //     .filter(contacts => contacts._id === contactId)
+  //     .map(contact => contact);
+  //
+  // console.log(contacts)
+
 
   return (
     <div className={activeProfile ? "profile active" :  "profile"}>
       <div className="profile-info">
         <div className="lage-avatar">A</div>
-        <div className="profile-name">Фамилия Имя</div>
+        <div className="profile-name">f</div>
         <div className="profile-nickname">@nickname</div>
         <div className="profile-connection">
           <IconButton>
             <LocalPhoneIcon />
           </IconButton>
           <IconButton>
-            <VideoCameraFrontIcon className={classes.marginIcon} />
+            <VideoCameraFrontIcon  />
           </IconButton>
           <IconButton>
             <EmailIcon />

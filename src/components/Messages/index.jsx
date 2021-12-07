@@ -6,6 +6,8 @@ import IconProfile from "./IconProfile";
 import {loadMyId} from "../../redux/ducks/applicationReduser";
 import {useParams} from "react-router-dom";
 import Message from "./Message";
+import ChatHeader from "./ChatHeader";
+import Preloader from "../Preloader/Preloader"
 
 function Messages({ activeProfile, setActiveProfile }) {
   const contactId = useParams()._id;
@@ -13,7 +15,6 @@ function Messages({ activeProfile, setActiveProfile }) {
   const messages = useSelector((state) => state.messages.messages);
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.messages.loading);
-  // const allMessages = messages.filter(message => message.content)
 
   useEffect(() => {
     dispatch(loadMyId());
@@ -22,19 +23,16 @@ function Messages({ activeProfile, setActiveProfile }) {
 
   return (
     <div className="chat">
-      <div className="chat-header">
-        <SearchMessage />
-        <div className="chat-name">Имя автора</div>
-        <div
-          className="iconProfile"
-          onClick={() => setActiveProfile(!activeProfile)}
-        >
-          <IconProfile />
-        </div>
-      </div>
-
+      <ChatHeader
+        activeProfile={activeProfile}
+        setActiveProfile={setActiveProfile}
+        contactId={contactId}
+      />
         {loading ? (
-          <div>Идет загрузка ...</div>
+          <div className="preloader">
+            {/*Загрузка сообщений ...*/}
+            {/*<Preloader />*/}
+          </div>
         ) : (
           <div className="chat-content">
             {messages.map((message) => {
@@ -42,9 +40,6 @@ function Messages({ activeProfile, setActiveProfile }) {
             })}
           </div>
         )}
-
-
-
     </div>
   );
 }

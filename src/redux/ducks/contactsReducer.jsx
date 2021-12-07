@@ -14,8 +14,8 @@ export const contactReducer = (state = initialState, action) => {
         case 'contact/load/success':
             return {
                 ...state,
+                contacts: action.payload,
                 loading: false,
-                contacts: action.payload
             }
 
 
