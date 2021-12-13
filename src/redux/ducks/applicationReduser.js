@@ -1,34 +1,28 @@
 const initialState = {
-    myId: [],
-}
+  myId: [],
+};
 
 export const applicationReduser = (state = initialState, action) => {
-    switch (action.type) {
-        case 'myId/success':
-            return {
-                myId: action.payload._id
-            }
+  switch (action.type) {
+    case 'myId/success':
+      return {
+        myId: action.payload._id,
+      };
 
-
-
-
-        default:
-            return state
-    }
-}
-
-
+    default:
+      return state;
+  }
+};
 
 export const loadMyId = () => {
-    return (dispatch) => {
-        fetch('https://api.intocode.ru:8001/api/profile')
-            .then(response => response.json())
-            .then(json => {
-                dispatch ({
-                    type: 'myId/success',
-                    payload: json
-                })
-            })
-    }
-}
-
+  return (dispatch) => {
+    fetch('https://api.intocode.ru:8001/api/profile')
+      .then((response) => response.json())
+      .then((json) => {
+        dispatch({
+          type: 'myId/success',
+          payload: json,
+        });
+      });
+  };
+};

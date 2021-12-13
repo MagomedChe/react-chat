@@ -7,6 +7,8 @@ import IconButton from "@mui/material/IconButton";
 import BasicButtons from "./Social";
 import {useSelector} from "react-redux";
 import {useParams} from "react-router-dom";
+import Socials from './Social'
+import MediaIcons from './MediaIcons'
 
 // const useStyles = makeStyles({
 //   marginIcon: {
@@ -17,33 +19,23 @@ import {useParams} from "react-router-dom";
 
 function Profile({activeProfile, setActiveProfile}) {
 
-  // const contactId = useParams().id;
-  // const contacts = useSelector((state) => state.contacts.contacts)
-  //     .filter(contacts => contacts._id === contactId)
-  //     .map(contact => contact);
-  //
-  // console.log(contacts)
+  const contactId = useParams().id;
+  const contacts = useSelector((state) => state.contacts.contacts)
+      .find(contacts => contacts._id === contactId)
+
 
 
   return (
-    <div className={activeProfile ? "profile active" :  "profile"}>
+    <div className="profile">
       <div className="profile-info">
-        <div className="lage-avatar">A</div>
-        <div className="profile-name">f</div>
-        <div className="profile-nickname">@nickname</div>
+        <div className="lage-avatar">{contacts?.fullname[0]}</div>
+        <div className="profile-name">{contacts?.fullname}</div>
+        <div className="profile-nickname">@{contacts?.username}</div>
         <div className="profile-connection">
-          <IconButton>
-            <LocalPhoneIcon />
-          </IconButton>
-          <IconButton>
-            <VideoCameraFrontIcon  />
-          </IconButton>
-          <IconButton>
-            <EmailIcon />
-          </IconButton>
+          <MediaIcons/>
         </div>
         <div className="social">
-          <BasicButtons />
+          <Socials contacts={contacts}/>
         </div>
       </div>
     </div>

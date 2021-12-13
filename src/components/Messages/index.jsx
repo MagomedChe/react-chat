@@ -11,10 +11,10 @@ import Preloader from "../Preloader/Preloader"
 
 function Messages({ activeProfile, setActiveProfile }) {
   const contactId = useParams()._id;
+  const loading = useSelector((state) => state.messages.loading);
   const myId = useSelector(state => state.application.myId);
   const messages = useSelector((state) => state.messages.messages);
   const dispatch = useDispatch();
-  const loading = useSelector((state) => state.messages.loading);
 
   useEffect(() => {
     dispatch(loadMyId());
@@ -30,7 +30,7 @@ function Messages({ activeProfile, setActiveProfile }) {
       />
         {loading ? (
           <div className="preloader">
-            {/*Загрузка сообщений ...*/}
+            Загрузка сообщений ...
             {/*<Preloader />*/}
           </div>
         ) : (

@@ -1,8 +1,8 @@
-import Contacts from "./components/Contacts";
-import Profile from "./components/Profile";
-import Messages from "./components/Messages";
-import { useState } from "react";
-import { Routes, Route,  } from "react-router-dom";
+import Contacts from './components/Contacts';
+import Profile from './components/Profile';
+import Messages from './components/Messages';
+import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   const [activeProfile, setActiveProfile] = useState(false);
@@ -11,17 +11,12 @@ function App() {
       <div className="main">
         <Contacts />
         <Routes>
-          <Route path="/:_id" element={
-            <Messages
-              activeProfile={activeProfile}
-              setActiveProfile={setActiveProfile}
-            />
-          }/>
-        </Routes>
-        <Profile
-          activeProfile={activeProfile}
-          setActiveProfile={setActiveProfile}
-        />
+          <Route path="/" element={<div>Please, select a chat to start messaging</div>}/>
+          <Route path="/:_id" element={<Messages activeProfile={activeProfile} setActiveProfile={setActiveProfile}/>}/>
+       </Routes>
+       <Routes>
+         <Route path="/:id" element={<Profile activeProfile={activeProfile} setActiveProfile={setActiveProfile}/>}/>
+       </Routes>
       </div>
     </div>
   );

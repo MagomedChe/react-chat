@@ -10,7 +10,7 @@ body {
 
 .container {
   min-width: 300px;
-  background-color: #ebebeb;
+  background-color: #f5f5f5;
 }
 
 .preloader {
@@ -145,18 +145,10 @@ body {
 }
 
 .profile {
-  width: 0;
+  width: 30%;
   padding-top: 20px;
   text-align: center;
-  /*background-color: #ebebeb;*/
-  transition: all .8s;
-  transform: translateX(100px);
-  overflow-x: hidden;
-}
-
-.profile.active {
-  transform: translateX(0);
-  width: 30%;
+  background-color: #f5f5f5;
 }
 
 .iconProfile {
@@ -197,6 +189,10 @@ body {
   margin: 15px auto;
   font-size: 15px;
   border-radius: 5px;
+}
+
+.social-icon {
+  margin-right: 10px;
 }
 
 .social-name{
