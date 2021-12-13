@@ -15,7 +15,7 @@ function ChatHeader({ activeProfile, setActiveProfile, contactId }) {
     <div className="chat-header">
       <SearchMessage />
       {loading ? (
-        <div className="preloader">
+        <div>
           <Preloader size="5" />
         </div>
       ) : (

@@ -21,7 +21,9 @@ function Contacts(props) {
       </div>
       <div className="contacts">
         {loading ? (
-          <div>Идет загрузка ...</div>
+          <div className="preloader">
+              Идет загрузка ...
+          </div>
         ) : (
           <div>
             {contacts.map((contact) => {

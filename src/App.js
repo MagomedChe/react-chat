@@ -11,7 +11,7 @@ function App() {
       <div className="main">
         <Contacts />
         <Routes>
-          <Route path="/" element={<div>Please, select a chat to start messaging</div>}/>
+          <Route path="/" element={<div className="preloader">Please, select a chat to start messaging</div>}/>
           <Route path="/:_id" element={<Messages activeProfile={activeProfile} setActiveProfile={setActiveProfile}/>}/>
        </Routes>
        <Routes>

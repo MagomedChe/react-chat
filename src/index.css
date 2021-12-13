@@ -13,12 +13,7 @@ body {
   background-color: #f5f5f5;
 }
 
-.preloader {
-  margin: auto;
-  text-align: center;
-  vertical-align: middle;
 
-}
 
 .contacts {
   width: 100%;
@@ -42,8 +37,6 @@ body {
   background-color: white;
   box-shadow: 0 0 5px 0 #c5c5c5;
 }
-
-
 
 .contact-avatar {
   width: 30px;
@@ -73,42 +66,27 @@ body {
   font-size: 20px;
 }
 
-
-
 .chat {
   margin-left: 50px;
-  /*text-align: center;*/
   width: 100%;
 }
-
-
-
-/*.time-message {*/
-/*  font-size: 10px;*/
-/*  margin: 10px 0;*/
-/*}*/
 
 .chat-header {
   display: flex;
   justify-content: space-between;
 }
 
-/*.chat-name {*/
-/*  margin-right: 50px;*/
-/*  line-height: 40px;*/
-/*}*/
+
 
 .chat-content {
-  /*max-width: 70%;*/
-  /*float: right;*/
-  margin: 30px 20px 0 0 ;
-  /*text-align: -webkit-right;*/
-  /*justify-content: end;*/
+  margin: 30px 20px 0 0;
 }
 
-/*.text {*/
-/*  word-wrap: break-word;*/
-/*}*/
+.preloader  {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
 
 .chat-send {
   width: fit-content;
@@ -196,7 +174,6 @@ body {
 }
 
 .social-name{
-  /*line-height: 40px;*/
   height: 40px;
   vertical-align: middle;
 }

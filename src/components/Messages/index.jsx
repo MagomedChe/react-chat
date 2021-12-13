@@ -31,7 +31,6 @@ function Messages({ activeProfile, setActiveProfile }) {
         {loading ? (
           <div className="preloader">
             Загрузка сообщений ...
-            {/*<Preloader />*/}
           </div>
         ) : (
           <div className="chat-content">
