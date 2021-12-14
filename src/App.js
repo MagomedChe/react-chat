@@ -3,6 +3,7 @@ import Profile from './components/Profile';
 import Messages from './components/Messages';
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import {CSSTransition} from "react-transition-group";
 
 function App() {
   const [activeProfile, setActiveProfile] = useState(false);
@@ -14,9 +15,11 @@ function App() {
           <Route path="/" element={<div className="preloader">Please, select a chat to start messaging</div>}/>
           <Route path="/:_id" element={<Messages activeProfile={activeProfile} setActiveProfile={setActiveProfile}/>}/>
        </Routes>
-       <Routes>
-         <Route path="/:id" element={<Profile activeProfile={activeProfile} setActiveProfile={setActiveProfile}/>}/>
-       </Routes>
+       <CSSTransition in={activeProfile} timeout={700} unmountOnExit className="my-node">
+           <Routes>
+               <Route path="/:id" element={<Profile activeProfile={activeProfile} setActiveProfile={setActiveProfile}/>}/>
+           </Routes>
+       </CSSTransition>
       </div>
     </div>
   );

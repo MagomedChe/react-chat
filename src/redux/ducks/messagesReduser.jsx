@@ -16,6 +16,7 @@ export const messagesReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         messages: action.payload,
+
       };
 
     default:
