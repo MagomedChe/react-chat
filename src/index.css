@@ -15,14 +15,11 @@ body {
 
 .search-contact {
   width: 300px;
-  position: fixed;
 }
 
 .contacts {
   width: 300px;
   font-size: 16px;
-  position: fixed;
-  top: 70px;
 }
 
 .contact a {
@@ -83,6 +80,12 @@ body {
 
 .chat-content {
   margin: 30px 20px 0 0;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.chat-content::-webkit-scrollbar {
+  width: 0;
 }
 
 .preloader  {
