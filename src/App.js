@@ -15,7 +15,7 @@ function App() {
           <Route path="/" element={<div className="preloader">Please, select a chat to start messaging</div>}/>
           <Route path="/:_id" element={<Messages activeProfile={activeProfile} setActiveProfile={setActiveProfile}/>}/>
        </Routes>
-       <CSSTransition in={activeProfile} timeout={700} unmountOnExit className="my-node">
+       <CSSTransition in={activeProfile} timeout={400} unmountOnExit className="my-node">
            <Routes>
                <Route path="/:id" element={<Profile activeProfile={activeProfile} setActiveProfile={setActiveProfile}/>}/>
            </Routes>

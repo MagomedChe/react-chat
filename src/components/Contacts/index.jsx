@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Contact from "./Contact";
 import SearchContact from "./SearchContact";
 import {loadContacts} from "../../redux/ducks/contactsReducer";
+import {loadMyId} from "../../redux/ducks/applicationReduser";
 
 function Contacts(props) {
   const dispatch = useDispatch();
@@ -10,6 +11,7 @@ function Contacts(props) {
     const contacts = useSelector((state) => state.contacts.contacts);
   useEffect(() => {
     dispatch(loadContacts());
+      dispatch(loadMyId());
   }, [dispatch]);
 
 

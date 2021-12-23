@@ -7,7 +7,7 @@ import {loadMyId} from "../../redux/ducks/applicationReduser";
 import {useParams} from "react-router-dom";
 import Message from "./Message";
 import ChatHeader from "./ChatHeader";
-import Preloader from "../Preloader/Preloader"
+
 
 function Messages({ activeProfile, setActiveProfile }) {
   const contactId = useParams()._id;
@@ -17,7 +17,7 @@ function Messages({ activeProfile, setActiveProfile }) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(loadMyId());
+
     dispatch(loadMessages(myId, contactId));
   }, [dispatch, myId, contactId]);
 
@@ -33,12 +33,19 @@ function Messages({ activeProfile, setActiveProfile }) {
             Загрузка сообщений ...
           </div>
         ) : (
-          <div className="chat-content">
-            {messages.map((message) => {
-              return <Message message={message} myId={myId} key={message._id}/>;
-            })}
-          </div>
+            <div>
+                <div className="chat-content">
+                    {messages.map((message) => {
+                        return <Message message={message} myId={myId} key={message._id}/>;
+                    })}
+                </div>
+                <div className="chat-write">
+                    <input type="text" placeholder="Введите сообщение"/>
+                </div>
+            </div>
+
         )}
+
     </div>
   );
 }
