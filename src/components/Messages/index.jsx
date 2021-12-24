@@ -1,12 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadMessages } from "../../redux/ducks/messagesReduser";
-import SearchMessage from "./SearchMessage";
-import IconProfile from "./IconProfile";
-import {loadMyId} from "../../redux/ducks/applicationReduser";
 import {useParams} from "react-router-dom";
 import Message from "./Message";
 import ChatHeader from "./ChatHeader";
+import WriteMessage from './WriteMessage'
 
 
 function Messages({ activeProfile, setActiveProfile }) {
@@ -40,7 +38,7 @@ function Messages({ activeProfile, setActiveProfile }) {
                     })}
                 </div>
                 <div className="chat-write">
-                    <input type="text" placeholder="Введите сообщение"/>
+                    <WriteMessage/>
                 </div>
             </div>
 
