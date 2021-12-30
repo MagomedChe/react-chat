@@ -5,32 +5,34 @@ import {useState} from "react";
 import AttachFileIcon from '@mui/icons-material/AttachFile';
 import KeyboardVoiceIcon from '@mui/icons-material/KeyboardVoice';
 import SendIcon from '@mui/icons-material/Send';
+import {CSSTransition, SwitchTransition} from "react-transition-group";
+import ButtonSend from './ButtonsSend'
 
 export default function BasicTextFields() {
     const [write, setWrite] = useState('');
-    console.log(write)
+
     return (
-        <div>
+        <div className="write">
             <Box
                 component="form"
                 sx={{
-                    "& > :not(style)": {  width: "100%", },
+                    "& > :not(style)": {  width: "100%"},
                 }}
                 noValidate
                 autoComplete="off"
             >
                 <TextField
                     id="Write messages"
-                    label="Введите сообщение"
+                    placeholder="Введите сообщение"
                     variant="outlined"
                     size="small"
                     onChange={(e) => {setWrite(e.target.value)}}
                     value={write}
                 />
             </Box>
-            <AttachFileIcon/>
-            <KeyboardVoiceIcon/>
-            <SendIcon/>
+            <div className="write-icons">
+                <ButtonSend write={write}/>
+            </div>
         </div>
 
     );

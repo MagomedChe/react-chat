@@ -6,7 +6,9 @@ import { Routes, Route } from 'react-router-dom';
 import {CSSTransition} from "react-transition-group";
 
 function App() {
+
   const [activeProfile, setActiveProfile] = useState(false);
+
   return (
     <div className="App">
       <div className="main">
@@ -16,9 +18,9 @@ function App() {
           <Route path="/:_id" element={<Messages activeProfile={activeProfile} setActiveProfile={setActiveProfile}/>}/>
        </Routes>
        <CSSTransition in={activeProfile} timeout={400} unmountOnExit className="my-node">
-           <Routes>
-               <Route path="/:id" element={<Profile activeProfile={activeProfile} setActiveProfile={setActiveProfile}/>}/>
-           </Routes>
+         <Routes>
+           <Route path="/:id" element={<Profile activeProfile={activeProfile} setActiveProfile={setActiveProfile}/>}/>
+         </Routes>
        </CSSTransition>
       </div>
     </div>

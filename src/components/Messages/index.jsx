@@ -15,7 +15,6 @@ function Messages({ activeProfile, setActiveProfile }) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-
     dispatch(loadMessages(myId, contactId));
   }, [dispatch, myId, contactId]);
 
@@ -41,7 +40,6 @@ function Messages({ activeProfile, setActiveProfile }) {
                     <WriteMessage/>
                 </div>
             </div>
-
         )}
 
     </div>
