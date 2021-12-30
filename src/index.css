@@ -150,6 +150,13 @@ body {
 .write-icons {
   display: flex;
 }
+
+.write-icons button {
+  border: none;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
 .profile {
   width: 500px;
   padding-top: 20px;
@@ -217,6 +224,11 @@ body {
   height: 40px;
   vertical-align: middle;
 }
+
+
+
+
+
 
 
 

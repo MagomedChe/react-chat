@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { loadMessages } from "../../redux/ducks/messagesReduser";
 import {useParams} from "react-router-dom";
 import Message from "./Message";
-import ChatHeader from "./ChatHeader";
-import WriteMessage from './WriteMessage'
+import ChatHeader from "./Header/ChatHeader";
+import WriteMessage from './WriteInput/WriteMessage'
 
 
 function Messages({ activeProfile, setActiveProfile }) {

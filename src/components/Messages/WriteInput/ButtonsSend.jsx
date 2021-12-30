@@ -1,13 +1,16 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import {useState} from "react";
 import AttachFileIcon from '@mui/icons-material/AttachFile';
 import KeyboardVoiceIcon from '@mui/icons-material/KeyboardVoice';
 import SendIcon from '@mui/icons-material/Send';
 import {CSSTransition, SwitchTransition} from "react-transition-group";
+import {useDispatch} from "react-redux";
 
-export default function BasicTextFields(write, setWrite) {
+
+export default function BasicTextFields({write, setWrite}) {
+    const dispatch = useDispatch();
+    const handleAddMessage = () => {
+        // dispatch(addMessage())
+    }
 
     return (
             <div className="write-icons">
@@ -17,13 +20,14 @@ export default function BasicTextFields(write, setWrite) {
                 <button>
                     <SwitchTransition>
                         <CSSTransition key={write} classNames="fade">
-                            {write ?  <KeyboardVoiceIcon/> : <SendIcon/>}
+                            {write ?
+                                <SendIcon onClick={handleAddMessage}/>
+                                :
+                                <KeyboardVoiceIcon/>
+                            }
                         </CSSTransition>
                     </SwitchTransition>
                 </button>
             </div>
-
-
-
     );
 }
