@@ -1,42 +1,38 @@
 const initialState = {
-    contacts: [],
-    loading: false
-}
+  contacts: [],
+  loading: false,
+};
 
 export const contactReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case 'contact/load/start':
-            return {
-                ...state,
-                loading: true
-            }
+  switch (action.type) {
+    case 'contact/load/start':
+      return {
+        ...state,
+        loading: true,
+      };
 
-        case 'contact/load/success':
-            return {
-                ...state,
-                contacts: action.payload,
-                loading: false,
-            }
+    case 'contact/load/success':
+      return {
+        ...state,
+        contacts: action.payload,
+        loading: false,
+      };
 
-
-        default:
-            return state
-    }
-}
+    default:
+      return state;
+  }
+};
 
 export const loadContacts = () => {
-    return (dispatch) => {
-        dispatch({type: 'contact/load/start'});
-        fetch('https://api.intocode.ru:8001/api/contacts')
-            .then(response => response.json())
-            .then(json => {
-                dispatch({
-                    type: 'contact/load/success',
-                    payload: json
-                })
-            })
-    }
-}
-
-
-
+  return (dispatch) => {
+    dispatch({ type: 'contact/load/start' });
+    fetch('https://api.intocode.ru:8001/api/contacts')
+      .then((response) => response.json())
+      .then((json) => {
+        dispatch({
+          type: 'contact/load/success',
+          payload: json,
+        });
+      });
+  };
+};

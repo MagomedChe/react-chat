@@ -10,7 +10,6 @@ function ChatHeader({ activeProfile, setActiveProfile, contactId }) {
     (contact) => contact._id === contactId,
   );
 
-
   return (
     <div className="chat-header">
       <SearchMessage />

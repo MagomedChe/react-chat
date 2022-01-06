@@ -1,8 +1,8 @@
-import React from "react";
-import {useSelector} from "react-redux";
-import {useParams} from "react-router-dom";
-import Socials from './Social'
-import MediaIcons from './MediaIcons'
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import Socials from './Social';
+import MediaIcons from './MediaIcons';
 
 // const useStyles = makeStyles({
 //   marginIcon: {
@@ -11,13 +11,11 @@ import MediaIcons from './MediaIcons'
 //   },
 // });
 
-function Profile({activeProfile, setActiveProfile}) {
-
+function Profile({ activeProfile, setActiveProfile }) {
   const contactId = useParams().id;
-  const contacts = useSelector((state) => state.contacts.contacts)
-      .find(contacts => contacts._id === contactId)
-
-
+  const contacts = useSelector((state) => state.contacts.contacts).find(
+    (contacts) => contacts._id === contactId,
+  );
 
   return (
     <div className="profile">
@@ -26,10 +24,10 @@ function Profile({activeProfile, setActiveProfile}) {
         <div className="profile-name">{contacts?.fullname}</div>
         <div className="profile-nickname">@{contacts?.username}</div>
         <div className="profile-connection">
-          <MediaIcons/>
+          <MediaIcons />
         </div>
         <div className="social">
-          <Socials contacts={contacts}/>
+          <Socials contacts={contacts} />
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 // import { makeStyles } from "@material-ui/styles";
 
 // const useStyle = makeStyles({
@@ -18,7 +18,7 @@ export default function FormPropsTextFields() {
     <Box
       component="form"
       sx={{
-        "& .MuiTextField-root": { m: 0, width: '100%'  },
+        '& .MuiTextField-root': { m: 0, width: '100%' },
       }}
       noValidate
       autoComplete="off"

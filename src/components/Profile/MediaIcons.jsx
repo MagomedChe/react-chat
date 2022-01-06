@@ -1,10 +1,10 @@
-import React from 'react'
-import IconButton from '@mui/material/IconButton'
-import LocalPhoneIcon from '@mui/icons-material/LocalPhone'
-import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront'
-import EmailIcon from '@mui/icons-material/Email'
+import React from 'react';
+import IconButton from '@mui/material/IconButton';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
+import EmailIcon from '@mui/icons-material/Email';
 
-function MediaIcons (props) {
+function MediaIcons(props) {
   return (
     <div>
       <IconButton>
@@ -17,7 +17,7 @@ function MediaIcons (props) {
         <EmailIcon />
       </IconButton>
     </div>
-  )
+  );
 }
 
-export default MediaIcons
+export default MediaIcons;
