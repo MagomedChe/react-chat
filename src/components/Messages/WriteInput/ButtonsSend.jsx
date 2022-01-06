@@ -11,14 +11,12 @@ export default function BasicTextFields({ write, setWrite }) {
   const dispatch = useDispatch();
   const contactId = useParams()._id;
   const myId = useSelector((state) => state.application.myId);
-  const handleAddMessage = () => {
-    dispatch(addMessage(
-      write,
-      contactId,
-      myId))
+
+  const handleAddMessage = (myId, contactId, write ) => {
+    dispatch(addMessage(myId, contactId, write ))
   };
 
-
+  console.log(myId)
 
   return (
     <div className="write-icons">
@@ -29,11 +27,7 @@ export default function BasicTextFields({ write, setWrite }) {
         <SwitchTransition>
           <CSSTransition key={write} classNames="fade">
             {write ? (
-              <SendIcon onClick={() => handleAddMessage(
-                write,
-                contactId,
-                myId
-              )} />
+              <SendIcon onClick={() => handleAddMessage(myId, contactId, write )} />
             ) : (
               <KeyboardVoiceIcon />
             )}

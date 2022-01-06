@@ -56,9 +56,9 @@ export const loadMessages = (myId, contactId) => {
       });
   };
 };
-export const addMessage = (write, contactId, myId) => {
+export const addMessage = (myId, contactId, write) => {
   return (dispatch) => {
-    dispatch({ type: 'messages/send/start' });
+    dispatch({ type: 'messages/send/start'});
     fetch('https://api.intocode.ru:8001/api/messages', {
       method: 'POST',
       body: JSON.stringify({
@@ -66,6 +66,7 @@ export const addMessage = (write, contactId, myId) => {
         type: 'text',
         fromUserId: myId,
         toUserId: contactId,
+
 
       }),
       headers: {
