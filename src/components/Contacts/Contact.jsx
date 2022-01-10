@@ -8,7 +8,7 @@ function Contact({ contact }) {
         <div className="contact-avatar">{contact.fullname[0]}</div>
         <div className="info">
           <div className="contact-name">{contact.fullname}</div>
-          <div className="contact-last-message">Последнее сообщение</div>
+          <div className="contact-last-message">{contact.lastMessage?.content}</div>
         </div>
         <div className="contact-last-time">12:30</div>
       </NavLink>

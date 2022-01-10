@@ -1,5 +1,6 @@
 import React from 'react';
 import CheckIcon from '@mui/icons-material/Check';
+import moment from "moment";
 
 function Message({ message, myId }) {
   const allMessages = message.toUserId !== myId;
@@ -9,12 +10,13 @@ function Message({ message, myId }) {
   }
 
   return (
-    <div>
       <div className={allMessages ? 'chat-send' : 'chat-incoming'}>
         {message.content}
-        <CheckIcon fontSize={'small'} />
+        <div className='date'>
+            {moment(message.time).format('HH:MM')}
+            <CheckIcon fontSize={'small'} />
+        </div>
       </div>
-    </div>
   );
 }
 
