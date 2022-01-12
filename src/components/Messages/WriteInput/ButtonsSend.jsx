@@ -16,7 +16,6 @@ export default function BasicTextFields({ write, setWrite }) {
     dispatch(addMessage(myId, contactId, write ))
   };
 
-  console.log(myId)
 
   return (
     <div className="write-icons">

@@ -56,17 +56,16 @@ export const loadMessages = (myId, contactId) => {
       });
   };
 };
-export const addMessage = (myId, contactId, write) => {
+export const addMessage = (myId, contactId, write ) => {
   return (dispatch) => {
     dispatch({ type: 'messages/send/start'});
     fetch('https://api.intocode.ru:8001/api/messages', {
       method: 'POST',
       body: JSON.stringify({
+        myId: myId,
+        contactId: contactId,
         content: write,
         type: 'text',
-        fromUserId: myId,
-        toUserId: contactId,
-
 
       }),
       headers: {
@@ -76,10 +75,10 @@ export const addMessage = (myId, contactId, write) => {
       dispatch({
         type: 'messages/send/success',
         payload: {
+          myId: myId,
+          contactId: contactId,
           content: write,
           type: 'text',
-          fromUserId: myId,
-          toUserId: contactId,
         },
       });
       scrollChatDown();

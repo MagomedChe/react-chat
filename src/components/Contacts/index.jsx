@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Contact from './Contact';
 import SearchContact from './SearchContact';
@@ -9,13 +9,15 @@ function Contacts(props) {
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.contacts.loading);
   const contacts = useSelector((state) => state.contacts.contacts);
-  useEffect(() => {
+    const [dropdown, setDropdown] = useState(false);
+
+    useEffect(() => {
     dispatch(loadContacts());
     dispatch(loadMyId());
   }, [dispatch]);
 
   return (
-    <div className="container">
+    <div className="sidebar">
       <div className="search-contact">
         <SearchContact />
       </div>
