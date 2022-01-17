@@ -23,7 +23,7 @@ function Contacts(props) {
       </div>
       <div className="contacts">
         {loading ? (
-          <div className="preloader">Идет загрузка ...</div>
+          <div>Идет загрузка ...</div>
         ) : (
           <div>
             {contacts.map((contact) => {

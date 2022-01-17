@@ -3,7 +3,6 @@ import React from 'react';
 function Dropdown({ setDropdown, dropdown }) {
   const handleContactDelete = () => {
       setDropdown(false);
-    alert('Кнопка удаления');
   };
 
   return (
