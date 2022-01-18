@@ -77,27 +77,30 @@ body {
 
 .dropdown {
   position: absolute;
-  right: 13px;
+  right: 20px;
   font-weight: bold;
   font-size: 25px;
 }
 
 .dropdownMenu {
   position: absolute;
-  top: 13px;
-  right: 15px;
+  top: 30px;
+  right: 45px;
   font-size: 10px;
-  z-index: 1;
+  z-index: 2;
   padding: 3px;
-  /*background-color: #e4e4ff;*/
-  /*margin: auto;*/
+  box-shadow: 0 0 7px -3px;
 }
 
-.del {
-  margin: 0;
-  border-bottom: #000000;
+.MuiIcon-root {
 
 }
+
+/*.del {*/
+/*  margin: 0;*/
+/*  border-bottom: #000000;*/
+
+/*}*/
 
 .chat {
   height: 100vh;
@@ -132,12 +135,22 @@ body {
   border-radius: 20px 20px 0 20px;
   background-color: #1446a0;
   color: #ffffff;
-  padding: 15px;
+  padding: 15px 25px 15px 10px;
   margin: 0 0 10px auto;
   font-size: 15px;
   font-weight: 300;
   text-align: right;
   max-width: 600px;
+}
+
+.date {
+  font-size: 10px;
+  margin-top: 5px;
+  text-align: left;
+}
+
+.date .MuiSvgIcon-root {
+  font-size: 13px;
 }
 
 .chat-incoming {

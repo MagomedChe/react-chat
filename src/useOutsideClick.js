@@ -1,3 +1,4 @@
+//Для отслеживания клика вне элемента
 import { useEffect } from 'react';
 
 const useOutsideClick = (ref, callback) => {

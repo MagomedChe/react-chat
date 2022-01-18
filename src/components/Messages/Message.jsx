@@ -14,7 +14,7 @@ function Message({ message, myId }) {
         {message.content}
         <div className='date'>
             {moment(message.time).format('HH:MM')}
-            <CheckIcon fontSize={'small'} />
+            <CheckIcon fontSize={'50px'} />
         </div>
       </div>
   );
