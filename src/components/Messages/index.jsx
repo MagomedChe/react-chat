@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { loadMessages } from '../../redux/ducks/messagesReduser';
 import { useParams } from 'react-router-dom';
@@ -13,6 +13,13 @@ function Messages({ activeProfile, setActiveProfile }) {
   const messages = useSelector((state) => state.messages.messages);
   const dispatch = useDispatch();
 
+  const [searchMessage, setSearchMessage] = useState('');
+  const filteredMessage = messages.filter(message => {
+    return message.content.toLowerCase().includes(searchMessage.toLowerCase())
+  })
+
+
+
 
   useEffect(() => {
     dispatch(loadMessages(myId, contactId));
@@ -24,13 +31,14 @@ function Messages({ activeProfile, setActiveProfile }) {
         activeProfile={activeProfile}
         setActiveProfile={setActiveProfile}
         contactId={contactId}
+        setSearchMessage={setSearchMessage}
       />
       {loading ? (
         <div className="preloader">Загрузка сообщений ...</div>
       ) : (
         <div>
           <div className="chat-content" id='lastMessages'>
-            {messages.map((message) => {
+            {filteredMessage.map((message) => {
               return (
                 <Message message={message} myId={myId} key={message._id} />
               );

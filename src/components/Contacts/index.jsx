@@ -9,7 +9,11 @@ function Contacts(props) {
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.contacts.loading);
   const contacts = useSelector((state) => state.contacts.contacts);
-    const [dropdown, setDropdown] = useState(false);
+  //Поиск контактов
+  const [searchContact, setSearchContact] = useState('');
+  const filteredContacts = contacts.filter(contact => {
+    return contact.fullname.toLowerCase().includes(searchContact.toLowerCase())
+  })
 
     useEffect(() => {
     dispatch(loadContacts());
@@ -19,14 +23,14 @@ function Contacts(props) {
   return (
     <div className="sidebar">
       <div className="search-contact">
-        <SearchContact />
+        <SearchContact setSearchContact={setSearchContact}/>
       </div>
       <div className="contacts">
         {loading ? (
           <div>Идет загрузка ...</div>
         ) : (
           <div>
-            {contacts.map((contact) => {
+            {filteredContacts.map((contact) => {
               return <Contact contact={contact} key={contact._id} />;
             })}
           </div>

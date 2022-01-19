@@ -1,18 +1,12 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-// import { makeStyles } from "@material-ui/styles";
+import { useState } from 'react'
 
-// const useStyle = makeStyles({
-//   searchInput: {
-//       // width: '90%',
-//       // height: 10,
-//       // margin: 'auto',
-//   }
-// })
 
-export default function FormPropsTextFields() {
-  // const classes = useStyle();
+export default function FormPropsTextFields({setSearchContact}) {
+
+
 
   return (
     <Box
@@ -25,11 +19,11 @@ export default function FormPropsTextFields() {
     >
       <div>
         <TextField
-          // className={classes.searchInput}
           id="Search contact"
           label="Search contact"
           type="search"
           size="small"
+          onChange={e => setSearchContact(e.target.value)}
         />
       </div>
     </Box>

@@ -2,7 +2,7 @@ import React from 'react';
 
 function Dropdown({ setDropdown, dropdown }) {
   const handleContactDelete = () => {
-      setDropdown(false);
+    setDropdown(false);
   };
 
   return (
