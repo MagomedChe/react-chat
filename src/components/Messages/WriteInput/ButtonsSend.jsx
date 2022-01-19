@@ -23,15 +23,11 @@ export default function BasicTextFields({ write, setWrite }) {
         <AttachFileIcon />
       </button>
       <button>
-        <SwitchTransition>
-          <CSSTransition key={write} classNames="fade">
             {write ? (
               <SendIcon onClick={() => handleAddMessage(myId, contactId, write )} />
             ) : (
               <KeyboardVoiceIcon />
             )}
-          </CSSTransition>
-        </SwitchTransition>
       </button>
     </div>
   );

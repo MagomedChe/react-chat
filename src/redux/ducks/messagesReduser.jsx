@@ -24,6 +24,23 @@ export const messagesReducer = (state = initialState, action) => {
         messages: action.payload,
       };
 
+    case 'message/delete/start':
+      return {
+        ...state,
+        loading: true
+      }
+
+    case 'message/delete/success':
+      return {
+        ...state,
+        messages: state.messages.filter((message) => {
+          if (message._id !== action.payload) {
+            return true
+          }
+          return false
+        }),
+      }
+
     case 'messages/send/start':
       return {
         ...state,
@@ -85,3 +102,18 @@ export const addMessage = (myId, contactId, write ) => {
     });
   };
 };
+
+export const deleteMessage = (id) => {
+  return (dispatch) => {
+    dispatch({type: '/message/deletestart'});
+    fetch(`https://api.intocode.ru:8001/api/messages/${id}`, {
+      method: 'DELETE',
+    })
+        .then(() => {
+          dispatch({
+            type: 'message/delete/success',
+            payload: id
+          })
+        })
+  }
+}

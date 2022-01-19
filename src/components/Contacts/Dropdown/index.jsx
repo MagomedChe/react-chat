@@ -7,10 +7,10 @@ function Dropdown({ setDropdown, dropdown }) {
 
   return (
     <div className="dropdownMenu">
-      <div className="del" onClick={handleContactDelete}>
+      <div onClick={handleContactDelete}>
         Delete
       </div>
-      <div className="del">Archive</div>
+      <div>Archive</div>
     </div>
   );
 }
