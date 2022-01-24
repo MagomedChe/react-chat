@@ -1,3 +1,4 @@
+//Скрол к концу сообщения
 const scrollChatDown = () => {
   const chatWindow = document.getElementById('lastMessages');
   if (chatWindow) {
@@ -7,6 +8,7 @@ const scrollChatDown = () => {
 const initialState = {
   messages: [],
   loading: false,
+  sending: false,
 };
 
 export const messagesReducer = (state = initialState, action) => {
@@ -27,38 +29,51 @@ export const messagesReducer = (state = initialState, action) => {
     case 'message/delete/start':
       return {
         ...state,
-        loading: true
-      }
+        loading: true,
+      };
 
     case 'message/delete/success':
       return {
         ...state,
         messages: state.messages.filter((message) => {
           if (message._id !== action.payload) {
-            return true
+            return true;
           }
-          return false
+          return false;
         }),
-      }
+      };
 
     case 'messages/send/start':
       return {
         ...state,
         loading: true,
+        messages: [
+          ...state.messages,{
+          ...action.payload,
+          sending:true
+        }]
       };
 
     case 'messages/send/success':
       return {
         ...state,
         loading: false,
-        messages: [...state.messages, action.payload],
+        messages: state.messages.map(messsage => {
+          if (messsage.id === action.payload.tempId) {
+            return {
+              ...action.payload,
+              sending: false,
+            }
+          }
+          return messsage
+        }),
       };
 
     default:
       return state;
   }
 };
-
+//Загрузка сообщений
 export const loadMessages = (myId, contactId) => {
   return (dispatch) => {
     dispatch({ type: 'messages/load/start' });
@@ -73,9 +88,15 @@ export const loadMessages = (myId, contactId) => {
       });
   };
 };
+// type: 'messages/send/start',
+//Добавление сообщений
 export const addMessage = (myId, contactId, write) => {
+  const tempId = Math.random();
   return (dispatch) => {
-    dispatch({ type: 'messages/send/start' });
+    dispatch({
+      type: 'messages/send/start',
+      payload: { tempId: tempId, myId, contactId, write}
+    });
     fetch('https://api.intocode.ru:8001/api/messages', {
       method: 'POST',
       body: JSON.stringify({
@@ -95,6 +116,7 @@ export const addMessage = (myId, contactId, write) => {
           contactId: contactId,
           content: write,
           type: 'text',
+          tempId: tempId
         },
       });
       scrollChatDown();
@@ -102,17 +124,18 @@ export const addMessage = (myId, contactId, write) => {
   };
 };
 
+
+//Удаление сообщений
 export const deleteMessage = (id) => {
   return (dispatch) => {
-    dispatch({type: '/message/deletestart'});
+    dispatch({ type: '/message/deletestart' });
     fetch(`https://api.intocode.ru:8001/api/messages/${id}`, {
       method: 'DELETE',
-    })
-        .then(() => {
-          dispatch({
-            type: 'message/delete/success',
-            payload: id
-          })
-        })
-  }
-}
+    }).then(() => {
+      dispatch({
+        type: 'message/delete/success',
+        payload: id,
+      });
+    });
+  };
+};

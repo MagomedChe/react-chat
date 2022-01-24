@@ -12,7 +12,7 @@ function Messages({ activeProfile, setActiveProfile }) {
   const myId = useSelector((state) => state.application.myId);
   const messages = useSelector((state) => state.messages.messages);
   const dispatch = useDispatch();
-
+  //Поиск сообщения
   const [searchMessage, setSearchMessage] = useState('');
   const filteredMessage = messages.filter(message => {
     return message.content.toLowerCase().includes(searchMessage.toLowerCase())
