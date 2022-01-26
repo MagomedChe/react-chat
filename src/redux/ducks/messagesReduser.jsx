@@ -47,26 +47,29 @@ export const messagesReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: true,
-        messages: [
-          ...state.messages,{
-          ...action.payload,
-          sending:true
-        }]
+        messages: [...state.messages, action.payload, ],
+        sending:true
+      //     [
+      //     ...state.messages,{
+      //     ...action.payload,
+      //
+      //   }]
       };
 
     case 'messages/send/success':
       return {
         ...state,
         loading: false,
+        sending: false,
         messages: state.messages.map(messsage => {
-          if (messsage.id === action.payload.tempId) {
+          if (messsage._id === action.payload.tempId) {
             return {
               ...action.payload,
-              sending: false,
             }
           }
           return messsage
         }),
+
       };
 
     default:
@@ -88,14 +91,17 @@ export const loadMessages = (myId, contactId) => {
       });
   };
 };
-// type: 'messages/send/start',
 //Добавление сообщений
 export const addMessage = (myId, contactId, write) => {
   const tempId = Math.random();
   return (dispatch) => {
     dispatch({
       type: 'messages/send/start',
-      payload: { tempId: tempId, myId, contactId, write}
+      payload: {
+        tempId: tempId,
+        myId: myId,
+        contactId: contactId,
+        content: write,}
     });
     fetch('https://api.intocode.ru:8001/api/messages', {
       method: 'POST',
