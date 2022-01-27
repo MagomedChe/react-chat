@@ -12,6 +12,7 @@ const initialState = {
 
 export const messagesReducer = (state = initialState, action) => {
   switch (action.type) {
+//Загрузка сообщений
     case 'messages/load/start':
       return {
         ...state,
@@ -24,7 +25,7 @@ export const messagesReducer = (state = initialState, action) => {
         loading: false,
         messages: action.payload,
       };
-
+//Удаление сообщений
     case 'message/delete/start':
       return {
         ...state,
@@ -41,7 +42,7 @@ export const messagesReducer = (state = initialState, action) => {
           return false;
         }),
       };
-
+//Отправка сообщений
     case 'messages/send/start':
       return {
         ...state,
@@ -82,7 +83,7 @@ export const loadMessages = (myId, contactId) => {
       });
   };
 };
-//Добавление сообщений
+//Отправка сообщений
 export const addMessage = (myId, contactId, write) => {
   const tempId = Math.random() * 100;
   return (dispatch) => {
