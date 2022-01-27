@@ -13,7 +13,8 @@ export default function BasicTextFields({ write, setWrite }) {
   const myId = useSelector((state) => state.application.myId);
 
   const handleAddMessage = (myId, contactId, write ) => {
-    dispatch(addMessage(myId, contactId, write ))
+    dispatch(addMessage(myId, contactId, write ));
+    setWrite('')
   };
 
 

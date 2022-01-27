@@ -17,7 +17,6 @@ function Contacts(props) {
 
     useEffect(() => {
     dispatch(loadContacts());
-    dispatch(loadMyId());
   }, [dispatch]);
 
   return loading ? (

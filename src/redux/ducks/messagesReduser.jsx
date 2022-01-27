@@ -8,7 +8,6 @@ const scrollChatDown = () => {
 const initialState = {
   messages: [],
   loading: false,
-  sending: false,
 };
 
 export const messagesReducer = (state = initialState, action) => {
@@ -47,29 +46,21 @@ export const messagesReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: true,
-        messages: [...state.messages, action.payload, ],
-        sending:true
-      //     [
-      //     ...state.messages,{
-      //     ...action.payload,
-      //
-      //   }]
+        messages: [...state.messages, {...action.payload, sending:true} ],
       };
 
     case 'messages/send/success':
       return {
         ...state,
-        loading: false,
-        sending: false,
-        messages: state.messages.map(messsage => {
-          if (messsage._id === action.payload.tempId) {
+        messages: state.messages.map(message => {
+          if (message.tempId === action.payload.tempId) {
             return {
               ...action.payload,
+              sending: false,
             }
           }
-          return messsage
+          return message;
         }),
-
       };
 
     default:
@@ -93,7 +84,7 @@ export const loadMessages = (myId, contactId) => {
 };
 //Добавление сообщений
 export const addMessage = (myId, contactId, write) => {
-  const tempId = Math.random();
+  const tempId = Math.random() * 100;
   return (dispatch) => {
     dispatch({
       type: 'messages/send/start',
@@ -101,28 +92,28 @@ export const addMessage = (myId, contactId, write) => {
         tempId: tempId,
         myId: myId,
         contactId: contactId,
-        content: write,}
+        content: write,
+      }
     });
     fetch('https://api.intocode.ru:8001/api/messages', {
       method: 'POST',
       body: JSON.stringify({
+        tempId: tempId,
         myId: myId,
         contactId: contactId,
         content: write,
         type: 'text',
+        sending: false,
       }),
       headers: {
         'Content-type': 'application/json; chatset=UTF-8',
       },
-    }).then(() => {
+    }).then(res => res.json())
+        .then((json) => {
       dispatch({
         type: 'messages/send/success',
         payload: {
-          myId: myId,
-          contactId: contactId,
-          content: write,
-          type: 'text',
-          tempId: tempId
+          ...json, tempId: tempId
         },
       });
       scrollChatDown();
@@ -134,7 +125,7 @@ export const addMessage = (myId, contactId, write) => {
 //Удаление сообщений
 export const deleteMessage = (id) => {
   return (dispatch) => {
-    dispatch({ type: '/message/deletestart' });
+    dispatch({ type: 'message/delete/start' });
     fetch(`https://api.intocode.ru:8001/api/messages/${id}`, {
       method: 'DELETE',
     }).then(() => {

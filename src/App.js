@@ -1,11 +1,18 @@
 import Contacts from './components/Contacts';
 import Profile from './components/Profile';
 import Messages from './components/Messages';
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
+import {loadContacts} from "./redux/ducks/contactsReducer";
+import {loadMyId} from "./redux/ducks/applicationReduser";
+import {useDispatch} from "react-redux";
 
 function App() {
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(loadMyId());
+    }, [dispatch]);
   const [activeProfile, setActiveProfile] = useState(false);
 
   return (
