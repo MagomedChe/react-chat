@@ -32,6 +32,7 @@ function App() {
             path="/:_id"
             element={
               <Messages
+                  key={id}
                 activeProfile={activeProfile}
                 setActiveProfile={setActiveProfile}
               />

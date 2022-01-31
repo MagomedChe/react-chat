@@ -110,7 +110,7 @@ export const addMessage = (myId, contactId, write) => {
         'Content-type': 'application/json; chatset=UTF-8',
       },
     }).then(res => res.json())
-        .then((json) => {
+      .then((json) => {
       dispatch({
         type: 'messages/send/success',
         payload: {

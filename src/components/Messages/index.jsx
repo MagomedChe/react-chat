@@ -40,7 +40,6 @@ function Messages({ activeProfile, setActiveProfile }) {
           <WriteMessage />
         </div>
       </div>
-      }
     </div>
   );
 }
