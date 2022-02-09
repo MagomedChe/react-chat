@@ -29,7 +29,6 @@ export const messagesReducer = (state = initialState, action) => {
     case 'message/delete/start':
       return {
         ...state,
-        loading: true,
       };
 
     case 'message/delete/success':
@@ -46,7 +45,6 @@ export const messagesReducer = (state = initialState, action) => {
     case 'messages/send/start':
       return {
         ...state,
-        loading: true,
         messages: [...state.messages, {...action.payload, sending:true} ],
       };
 
