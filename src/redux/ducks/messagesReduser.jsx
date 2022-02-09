@@ -68,6 +68,7 @@ export const messagesReducer = (state = initialState, action) => {
       return state;
   }
 };
+
 //Загрузка сообщений
 export const loadMessages = (myId, contactId) => {
   return (dispatch) => {
