@@ -32,8 +32,8 @@ function Messages({ activeProfile, setActiveProfile }) {
       />
       <div>
         <div className="chat-content" id="lastMessages">
-          {filteredMessage.map((message) => {
-            return <Message message={message} myId={myId} key={message._id} />;
+          {filteredMessage.map((message, index) => {
+            return <Message message={message} myId={myId} key={index} />;
           })}
         </div>
         <div className="chat-write">

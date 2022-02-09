@@ -28,11 +28,8 @@ function App() {
               </div>
             }
           />
-          <Route
-            path="/:_id"
-            element={
+          <Route path="/:_id" element={
               <Messages
-                  key={id}
                 activeProfile={activeProfile}
                 setActiveProfile={setActiveProfile}
               />
@@ -46,9 +43,7 @@ function App() {
           className="my-node"
         >
           <Routes>
-            <Route
-              path="/:id"
-              element={
+            <Route path="/:id" element={
                 <Profile
                   activeProfile={activeProfile}
                   setActiveProfile={setActiveProfile}

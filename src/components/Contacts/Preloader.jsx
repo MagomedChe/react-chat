@@ -8,9 +8,9 @@ import Skeleton from '@mui/material/Skeleton';
 function SkeletonChildrenDemo(props) {
   const preloader = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-  return preloader.map(() => {
+  return preloader.map((index) => {
     return (
-      <div>
+      <div key={index}>
         <Box sx={{ display: 'flex', alignItems: 'center' }} animation="wave">
           <Box sx={{ margin: 1 }}>
             <Skeleton variant="circular" animation="wave">

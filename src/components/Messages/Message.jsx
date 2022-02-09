@@ -22,12 +22,8 @@ function Message({ message, myId }) {
   return (
     <div
       className={allMessages ? 'chat-send' : 'chat-incoming'}
-      onMouseEnter={() => {
-        setHover(true);
-      }}
-      onMouseLeave={() => {
-        setHover(false);
-      }}
+      onMouseEnter={() => {setHover(true)}}
+      onMouseLeave={() => {setHover(false)}}
     >
       {message.content}
       {hover && (
