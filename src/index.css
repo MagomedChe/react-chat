@@ -7,6 +7,8 @@ body {
   padding-top: 0.3rem;
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
+
 }
 
 .sidebar {
@@ -117,6 +119,7 @@ body {
   margin-top: 15px;
   height: 100vh;
   overflow-y: scroll;
+  /*height: calc(100vh - 115px);*/
 }
 
 .chat-content::-webkit-scrollbar {
@@ -186,9 +189,9 @@ body {
 .chat-write {
   position: absolute;
   width: 100%;
-  /*bottom: 0;*/
+  bottom: 0;
   background-color: white;
-  /*padding: 20px 0;*/
+  padding: 20px 0;
 }
 
 .write {
