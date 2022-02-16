@@ -117,9 +117,9 @@ body {
 
 .chat-content {
   margin-top: 15px;
-  height: 100vh;
+  /*height: 100vh;*/
   overflow-y: scroll;
-  /*height: calc(100vh - 115px);*/
+  height: calc(100vh - 115px);
 }
 
 .chat-content::-webkit-scrollbar {
@@ -191,7 +191,6 @@ body {
   width: 100%;
   bottom: 0;
   background-color: white;
-  padding: 20px 0;
 }
 
 .write {
