@@ -1,0 +1,83 @@
+.sidebar {
+    height: inherit;
+    min-width: 300px;
+    background-color: #f5f5f5;
+}
+
+.search_contact .MuiTextField-root {
+    width: 300px;
+}
+
+.contacts {
+    height: inherit;
+    width: 300px;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.contact a {
+    margin: 0 auto;
+    display: flex;
+    font-size: 16px;
+    line-height: 25px;
+    vertical-align: middle;
+    padding: 10px 10px;
+    position: relative;
+    border: 1px solid #f5f5f5;
+    color: black;
+    text-decoration: none;
+}
+
+.contact:hover,
+.active {
+    background-color: white;
+    box-shadow: 0 0 5px 0 #c5c5c5;
+}
+
+.contact_avatar {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(#cfe7fa, #6393c1);
+    font-size: 25px;
+    margin-right: 5px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 50%;
+    color: white;
+}
+
+.contact_last_message {
+    font-size: 12px;
+    color: darkgray;
+    display: flex;
+}
+
+.contact_last_time {
+    right: 13px;
+    position: absolute;
+    font-size: 13px;
+    color: gray;
+    top: 5px;
+}
+
+.name {
+    font-size: 20px;
+}
+
+.dropdown {
+    position: absolute;
+    right: 20px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.dropdownMenu {
+    position: absolute;
+    top: 30px;
+    right: 45px;
+    font-size: 10px;
+    z-index: 2;
+    padding: 3px;
+    box-shadow: 0 0 7px -3px;
+    background-color: whitesmoke;
+}

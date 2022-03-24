@@ -3,12 +3,13 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { useState } from 'react';
 import ButtonsSend from './ButtonsSend';
+import style from '../style.module.css'
 
 export default function BasicTextFields() {
   const [write, setWrite] = useState('');
 
   return (
-    <div className="write">
+    <div className={style.write}>
       <Box
         component="form"
         sx={{

@@ -1,4 +1,5 @@
 import React from 'react';
+import style from '../../Messages/style.module.css'
 
 function Dropdown({ setDropdown, dropdown }) {
   const handleContactDelete = () => {
@@ -6,10 +7,8 @@ function Dropdown({ setDropdown, dropdown }) {
   };
 
   return (
-    <div className="dropdownMenu">
-      <div onClick={handleContactDelete}>
-        Delete
-      </div>
+    <div className={style.dropdownMenu}>
+      <div onClick={handleContactDelete}>Delete</div>
       <div>Archive</div>
     </div>
   );

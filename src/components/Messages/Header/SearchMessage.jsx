@@ -13,7 +13,7 @@ export default function BasicTextFields() {
       autoComplete="off"
     >
       <TextField
-        id="Search messagec"
+        id="Search messages"
         label="Search message"
         variant="outlined"
         size="small"

@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import moment from 'moment';
 import Dropdown from './Dropdown';
 import useOutsideClick from '../../useOutsideClick';
+import style from './style.module.css'
 
 function Contact({ contact }) {
   const [dropdown, setDropdown] = useState(false);
@@ -22,7 +23,7 @@ function Contact({ contact }) {
 
   return (
     <div
-      className="contact"
+      className={style.contact}
       onMouseEnter={() => {
         setHover(true);
       }}
@@ -30,23 +31,23 @@ function Contact({ contact }) {
         setHover(false);
       }}
     >
-      <NavLink to={`/${contact._id}`}>
-        <div className="contact-avatar">{contact.fullname[0]}</div>
-        <div className="info">
-          <div className="contact-name">{contact.fullname}</div>
-          <div className="contact-last-message">
+      <NavLink to={`/${contact._id}`} className={({isActive}) =>
+        (isActive ? style.active : '')
+      }>
+        <div className={style.contact_avatar}>{contact.fullname[0]}</div>
+        <div>
+          <div className={style.contact_name}>{contact.fullname}</div>
+          <div className={style.contact_last_message}>
             {contact.lastMessage.content}
           </div>
         </div>
         <div ref={ref}>
           {hover ? (
-            <div onClick={handleOpenDropdown}
-            className="dropdown"
-            >
+            <div onClick={handleOpenDropdown} className={style.dropdown}>
               ...
             </div>
           ) : (
-            <div className="contact-last-time">
+            <div className={style.contact_last_time}>
               {moment(contact.lastMessage.time).format('HH:MM')}
             </div>
           )}

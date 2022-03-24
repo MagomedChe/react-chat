@@ -1,0 +1,67 @@
+.profile {
+    width: 500px;
+    padding-top: 20px;
+    text-align: center;
+    background-color: #f5f5f5;
+    transition: width 0.5s;
+    transform-origin: right;
+    transform: scaleX(1);
+}
+
+.exit-active {
+    width: 0;
+}
+
+.enter {
+    width: 0;
+}
+
+.enter-active {
+    width: 500px;
+}
+
+.lage_avatar {
+    width: 80px;
+    line-height: 80px;
+    background: linear-gradient(#cfe7fa, #6393c1);
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    margin: auto;
+}
+
+.profile_name {
+    font-weight: 400;
+    margin: 20px 0 15px 0;
+    font-size: 20px;
+}
+
+.profile_nickname {
+    color: grey;
+    font-weight: 100;
+    font-size: 20px;
+}
+
+.profile_connection {
+    color: grey;
+    margin-top: 15px;
+}
+
+.social {
+    background-color: white;
+    box-shadow: 0 0 13px 1px #c7c7c7;
+    width: 80%;
+    margin: 15px auto;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+.social_icon {
+    margin-right: 10px;
+}
+
+.social_name {
+    height: 40px;
+    vertical-align: middle;
+}

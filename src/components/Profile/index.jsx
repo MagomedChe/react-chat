@@ -3,13 +3,8 @@ import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import Socials from './Social';
 import MediaIcons from './MediaIcons';
+import style from './style.module.css'
 
-// const useStyles = makeStyles({
-//   marginIcon: {
-//     marginRight: 10,
-//     marginLeft: 10,
-//   },
-// });
 
 function Profile({ activeProfile, setActiveProfile }) {
   const contactId = useParams().id;
@@ -18,15 +13,15 @@ function Profile({ activeProfile, setActiveProfile }) {
   );
 
   return (
-    <div className="profile">
-      <div className="profile-info">
-        <div className="lage-avatar">{contacts?.fullname[0]}</div>
-        <div className="profile-name">{contacts?.fullname}</div>
-        <div className="profile-nickname">@{contacts?.username}</div>
-        <div className="profile-connection">
+    <div className={style.profile}>
+      <div className={style.profile_info}>
+        <div className={style.lage_avatar}>{contacts?.fullname[0]}</div>
+        <div className={style.profile_name}>{contacts?.fullname}</div>
+        <div className={style.profile_nickname}>@{contacts?.username}</div>
+        <div className={style.profile_connection}>
           <MediaIcons />
         </div>
-        <div className="social">
+        <div className={style.social}>
           <Socials contacts={contacts} />
         </div>
       </div>

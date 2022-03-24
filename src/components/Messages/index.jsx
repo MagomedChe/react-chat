@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import Message from './Message';
 import ChatHeader from './Header/ChatHeader';
 import WriteMessage from './WriteInput/WriteMessage';
+import style from './style.module.css';
 
 function Messages({ activeProfile, setActiveProfile }) {
   const contactId = useParams()._id;
@@ -23,7 +24,7 @@ function Messages({ activeProfile, setActiveProfile }) {
   }, [dispatch, myId, contactId]);
 
   return (
-    <div className="chat">
+    <div className={style.chat}>
       <ChatHeader
         activeProfile={activeProfile}
         setActiveProfile={setActiveProfile}
@@ -31,12 +32,12 @@ function Messages({ activeProfile, setActiveProfile }) {
         setSearchMessage={setSearchMessage}
       />
       <div>
-        <div className="chat-content" id="lastMessages">
+        <div className={style.chat_content} id="lastMessages">
           {filteredMessage.map((message, index) => {
-            return <Message message={message} myId={myId} key={index} />;
+            return <Message message={message} myId={myId} key={message._id} />;
           })}
         </div>
-        <div className="chat-write">
+        <div className={style.chat_write}>
           <WriteMessage />
         </div>
       </div>
